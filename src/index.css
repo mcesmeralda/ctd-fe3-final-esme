@@ -120,3 +120,8 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+/* comment */
+.dar {
+  color: #000;
+}
