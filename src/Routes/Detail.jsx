@@ -15,5 +15,5 @@ const Detail = () => {
     </>
   )
 }
-
+// hola
 export default Detail
