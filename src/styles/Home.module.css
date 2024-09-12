@@ -1,0 +1,70 @@
+
+.navbar {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dark {
+    background-color: black;
+    color: white;
+  }
+  
+  .light {
+    background-color: #faedf8;
+    color: black;
+  }
+  
+  .links {
+    display: flex;
+    gap: 15px;
+  }
+
+
+.home {
+  padding: 2rem;
+}
+
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1rem;
+  justify-content: center;
+}
+
+
+.red {
+  color: red;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.black {
+  color: black;
+  font-size: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+
+.themeButton {
+  background-color:  #261d1c;
+  border: none;
+  cursor: pointer;
+  padding: 0.65rem;
+  border-radius: 5px;
+  
+}
+.themeButton:hover{
+  background-color: rgb(136, 136, 136);
+}
+
+.dark .black{
+  color: aliceblue;
+}

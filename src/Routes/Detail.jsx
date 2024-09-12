@@ -1,19 +1,40 @@
-import React from 'react'
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+// src/Routes/Detail.jsx
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import styles from '../styles/Detail.module.css';
 
 const Detail = () => {
- 
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+  const { id } = useParams();
+  const [dentist, setDentist] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+      .then(response => response.json())
+      .then(data => setDentist(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, [id]);
+
+  if (!dentist) {
+    return <p>Loading...</p>;
+  }
 
   return (
-    <>
-      <h1>Detail Dentist id </h1>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-    </>
-  )
-}
-// hola
-export default Detail
+    <div className={styles.detailContainer}>
+      <h1 className={styles.title}>Detail Dentist</h1>
+      <div className={styles.detailGrid}>
+        <div className={styles.gridItem}><strong>Name:</strong></div>
+        <div className={styles.gridItem}><strong>Email:</strong></div>
+        <div className={styles.gridItem}><strong>Phone:</strong></div>
+        <div className={styles.gridItem}><strong>Website:</strong></div>
+        <div className={styles.gridItem}>{dentist.name}</div>
+        <div className={styles.gridItem}>{dentist.email}</div>
+        <div className={styles.gridItem}>{dentist.phone}</div> 
+        <div className={styles.gridItem}>{dentist.website}</div>
+      </div>
+    </div>
+  );
+};
+
+export default Detail;
+
+

@@ -7,6 +7,46 @@
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
+
+    {
+      "src": "/images/doctor.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
+    },
+
+    {
+      "src": "/images/DH.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+
+
+    {
+      "src": "/images/ico-facebook-dark.PNG",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+
+
+    {
+      "src": "/images/ico-instagram-dark.PNG",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+
+    {
+      "src": "/images/ico-tiktok-dark.PNG",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+
+    {
+      "src": "/images/ico-whatsapp-dark.PNG",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+
+
     {
       "src": "logo192.png",
       "type": "image/png",

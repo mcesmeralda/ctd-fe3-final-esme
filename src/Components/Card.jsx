@@ -1,22 +1,51 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import styles from "../styles/Card.module.css";
 
 const Card = ({ name, username, id }) => {
 
-  const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
-  }
+  const toggleFav = () => {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    
+    const isFavorite = favorites.some(fav => fav.id === id);
+
+    if (isFavorite) {
+     
+      favorites = favorites.filter(fav => fav.id !== id);
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      
+     
+      alert(`${name} has been removed from favorites.`);
+    } else {
+      
+      const newFavorite = { id, name, username };
+      favorites.push(newFavorite);
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      
+      
+      alert(`${name} has been added to favorites!`);
+    }
+  };
 
   return (
-    <div className="card">
-        {/* En cada card deberan mostrar en name - username y el id */}
-
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
+    <div className={styles.card}>
+      <img 
+        src="/images/doctor.jpg" 
+        alt="Doctor" 
+        className={styles.cardImage}
+        style={{ width: '100%', height: 'auto' }} 
+      />
+      <Link to={`/detail/${id}`} className={styles.detailLink}>
+        <h3>{name}</h3>
+      </Link>
+      <p>@{username}</p>
+      
+      <button onClick={toggleFav} className={styles.favButton}>
+        ⭐
+      </button>
     </div>
   );
 };
 
 export default Card;
+
