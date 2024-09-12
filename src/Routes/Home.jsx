@@ -49,6 +49,9 @@ const Home = () => {
         ))}
       </div>
     </main>
+ 
+    
+   
   );
 }
 
