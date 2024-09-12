@@ -1,6 +1,5 @@
 import React, { createContext, useReducer, useMemo, useEffect } from 'react';
 
-
 export const initialState = {
   theme: 'light',
   data: [],
@@ -13,6 +12,11 @@ const reducer = (state, action) => {
         ...state,
         theme: state.theme === 'light' ? 'dark' : 'light',
       };
+    case 'SET_THEME':
+      return {
+        ...state,
+        theme: action.payload,
+      };
     case 'SET_DATA':
       return {
         ...state,
@@ -23,29 +27,25 @@ const reducer = (state, action) => {
   }
 };
 
-
 export const ContextGlobal = createContext();
-
 
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-
+  // aqui cargo el tema desde localStorage al iniciar
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
-      dispatch({ type: 'TOGGLE_THEME' });
+      dispatch({ type: 'SET_THEME', payload: savedTheme });
     }
   }, []);
 
-
+  // aqui guardo el  tema en localStorage y actualizo clase del body
   useEffect(() => {
     localStorage.setItem('theme', state.theme);
-   
     document.body.className = state.theme;
   }, [state.theme]);
 
- 
   const value = useMemo(() => ({ state, dispatch }), [state]);
 
   return (
