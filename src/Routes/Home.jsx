@@ -1,4 +1,3 @@
-// src/Routes/Home.jsx
 import React, { useState, useEffect } from 'react';
 import Card from '../Components/Card';
 import styles from '../styles/Home.module.css'; 

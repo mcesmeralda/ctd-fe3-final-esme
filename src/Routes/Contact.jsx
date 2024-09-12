@@ -1,4 +1,3 @@
-// src/Routes/Contact.jsx
 import React, { useContext } from 'react';
 import Form from '../Components/Form';
 import { ContextGlobal } from '../utils/global.context';

@@ -1,4 +1,3 @@
-// src/Components/Navbar.jsx
 import React, { useContext } from 'react';
 import { ContextGlobal } from '../utils/global.context';
 import { Link } from 'react-router-dom';
