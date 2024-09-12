@@ -63,3 +63,17 @@
     width: 100%;
     cursor: pointer;
   }
+
+  .favs {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .cardGrid {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; 
+    margin-top: 20px;
+  }
