@@ -20,7 +20,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/favs" element={<Favs />} />
               <Route path="/detail/:id" element={<Detail />} />
-              <Route path="*" element={<h1>Page no funtion</h1>} />
+              <Route path="*" element={<h1>Page not Found</h1>} />
             </Routes>
           </main>
           <Footer />
